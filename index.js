@@ -91,11 +91,11 @@ exports.kill = function(){
     process.exit(0);
 }
 
-exports.createFiles = function(filePath, extension, sizeInMb, numFiles){
+exports.createFiles = function(extension, sizeInMb, numFiles){
     var result = [];
-    var completePath = filePath + "/" + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + `.${extension}`;
+    var filePath = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + `.${extension}`;
     for (i = 0; i < numFiles.length; i++) { 
-        fs.writeFile(completePath, Buffer.alloc(1024*1024*sizeInMb), (err) => {  
+        fs.writeFile(filePath, Buffer.alloc(1024*1024*sizeInMb), (err) => {  
             if (err) throw err;
             result.push('File ['+ i +'] with' + sizeInMb + ' MegaBytes !');
         });
