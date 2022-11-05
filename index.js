@@ -91,15 +91,18 @@ exports.kill = function(){
     process.exit(0);
 }
 
-exports.createFiles = function(extension, sizeInMb, numFiles){
+exports.createFiles = function(sizeInMb, numFiles){
     var result = [];
-    var filePath = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + `.${extension}`;
-    for (i = 0; i < numFiles.length; i++) { 
-        fs.writeFile(filePath, Buffer.alloc(1024*1024*sizeInMb), (err) => {  
-            if (err) throw err;
-            result.push('File ['+ i +'] with' + sizeInMb + ' MegaBytes !');
-        });
-    }
+
+    for (i = 0; i < numFiles; i++) { 
+        console.log(i);
+        var filePath = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + '.txt';
+            fs.writeFile(filePath, Buffer.alloc(1024*1024*sizeInMb), (err) => {  
+                if (err) throw err;
+                result.push('File ['+ filePath +'] with ' + sizeInMb + ' MegaBytes !');
+            });
+        }
+
     return result;
 }
 
