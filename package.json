@@ -1,0 +1,27 @@
+{
+  "name": "performance-samples",
+  "version": "1.0.0",
+  "description": "Quick set of samples that will cause performance issues",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edisga/performance-samples.git"
+  },
+  "keywords": [
+    "node.js",
+    "performance"
+  ],
+  "author": "edisga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edisga/performance-samples/issues"
+  },
+  "homepage": "https://github.com/edisga/performance-samples#readme",
+  "dependencies": {
+    "microseconds": "^0.2.0",
+    "moment": "^2.29.4"
+  }
+}
