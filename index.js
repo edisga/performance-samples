@@ -1,7 +1,9 @@
 var fs = require('fs');
+var os = require('os');
 const convertTime = require('microseconds');
 const crypto = require('crypto');
 const dns = require('dns');
+
 const moment = require('moment/moment');
 
 //internal functions
