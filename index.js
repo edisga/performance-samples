@@ -72,17 +72,17 @@ exports.jsonblock = function(cycles){
     before = process.hrtime();
     str = JSON.stringify(obj);
     took = process.hrtime(before);
-    result.push['JSON.stringify took ' + took];
+    result.push('JSON.stringify took ' + took);
 
     before = process.hrtime();
     pos = str.indexOf('nomatch');
     took = process.hrtime(before);
-    result.push['Pure indexof took ' + took];
+    result.push('Pure indexof took ' + took);
 
     before = process.hrtime();
     res = JSON.parse(str);
     took = process.hrtime(before);
-    result.push['JSON.parse took ' + took];
+    result.push('JSON.parse took ' + took);
 
     return result;
 }
@@ -110,7 +110,7 @@ exports.dnsLookup = function(address,cycles){
     for (i; i < cycles; i++) { 
         dns.lookup(address, (err, value) => {
             if(err) throw err;
-            result.push[{ cycle: i, ip: value, ms: moment().millisecond()}];
+            result.push({ cycle: i, ip: value, ms: moment().millisecond()});
         });
     }
 
